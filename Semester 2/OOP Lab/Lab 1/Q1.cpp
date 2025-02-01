@@ -3,18 +3,22 @@ using namespace std;
 
 int main()
 {
-    float arr[] = {1.2, 4.5, 2.5, 6.2, 5.2, 6.5, 7.4, 8, 120.56, 11.5, 21.5, 123.4, 324.65, 54.67, 234.43, 346.23, 54.23, 12.3, 67.54, 12.12};
-    for (int i = 0; i < 20 - 1; i++)
+    float arr[] = {1.2, 4.5, 2.5, 6.2, 5.2, 6.5, 7.4, 8, 120.56, 346.23, 21.5, 123.4, 324.65, 11.12, 234.43, 346.23, 54.23, 12.3, 67.54, 12.12};
+    float max = *(arr);
+    float secondmax = 0;
+    for (int i = 1; i < 19; i++)
     {
-        for (int j = 0; j < 20 - i - 1; j++)
+        if (max < *(arr+i))
         {
-            if (*(arr + j) < *(arr + j + 1))
-            {
-                float temp = *(arr + j);
-                *(arr + j) = *(arr + j + 1);
-                *(arr + j + 1) = temp;
-            }
+            max = *(arr+i);
         }
     }
-    cout << "The second highest number is " << *(arr + 1);
+    for (int i = 0; i < 20; i++)
+    {
+        if (secondmax < *(arr+i) && *(arr+i) != max)
+        {
+            secondmax = *(arr+i);
+        }
+    }
+    cout << "The second highest number is " << secondmax;
 }
