@@ -55,11 +55,9 @@ int main()
 {
     GraduateStudent gs;
 
-    // 3a. Set and display the research topic
     gs.setResearchTopic("Machine Learning in Healthcare");
     cout << "Research Topic: " << gs.getResearchTopic() << "\n\n";
 
-    // 3b. Compute and display tuition for various statuses
     int credits = 12;
     cout << "Tuition for " << credits << " credit hours as UNDERGRAD: $"
          << gs.getTuition("undergraduate", credits) << "\n";
